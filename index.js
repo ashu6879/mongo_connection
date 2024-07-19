@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const userRoutes = require('./routes/userRoutes');
-require('./config/db'); // Connect to MongoDB
+const userRoutes = require('./src/routes/userRoutes');
+require('./src/config/db'); // Connect to MongoDB
 
 app.use(express.json());
 app.use('/users', userRoutes);

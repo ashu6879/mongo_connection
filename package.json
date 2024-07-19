@@ -1,9 +1,9 @@
 {
   "name": "express-app",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "index.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
