@@ -6,10 +6,5 @@
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
     { "src": "/(.*)", "dest": "/src/app.js" }
-  ],
-  "functions": {
-    "index.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
