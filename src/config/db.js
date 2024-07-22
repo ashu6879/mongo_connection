@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const uri = process.env.MONGODB_CONNECTION_STRING;
+const uri = "mongodb+srv://alphauser:alphauserpw@alphauniverse.vbhyo7i.mongodb.net/alphadb?retryWrites=true&w=majority&appName=Alphauniverse";
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
