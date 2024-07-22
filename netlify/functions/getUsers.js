@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_CONNECTION_STRING;
 
 exports.handler = async function(event, context) {
   console.log('Function start');
@@ -10,8 +10,8 @@ exports.handler = async function(event, context) {
     await client.connect();
     console.log('Connected to MongoDB');
 
-    const database = client.db('yourDatabaseName');
-    const collection = database.collection('yourCollectionName');
+    const database = client.db('alphadb');
+    const collection = database.collection('wp_users');
     console.log('Querying database');
     const users = await collection.find({}).limit(50).toArray();
 
