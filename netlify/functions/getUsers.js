@@ -8,7 +8,7 @@ exports.handler = async function(event, context) {
     await client.connect();
     const database = client.db('alphadb');
     const collection = database.collection('wp_users');
-    const users = await collection.find({}).toArray();
+    const users = await collection.find({}).limit(100).toArray();
     await client.close();
 
     return {
@@ -18,7 +18,7 @@ exports.handler = async function(event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to fetch users' }),
+      body: JSON.stringify({ error: 'Failed to fetch users', details: error.message }),
     };
   }
 };
