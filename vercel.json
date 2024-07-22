@@ -8,7 +8,7 @@
     { "src": "/(.*)", "dest": "/src/app.js" }
   ],
   "functions": {
-    "src/app.js": {
+    "index.js": {
       "maxDuration": 30
     }
   }
