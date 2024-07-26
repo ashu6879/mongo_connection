@@ -1,5 +1,6 @@
-const User = require('../models/user');
+const User = require('../models/user'); // Import your User model
 
+// Controller function to handle GET request to fetch all users
 exports.getAllUsers = (req, res) => {
   console.log('Fetching all users'); // Debug log
   User.find({})
@@ -14,5 +15,22 @@ exports.getAllUsers = (req, res) => {
     .catch(err => {
       console.log('Error fetching users:', err);
       res.status(500).json({ error: err.message });
+    });
+};
+
+// Controller function to handle POST request to create a new user
+exports.createUser = (req, res) => {
+  console.log('Creating a new user'); // Debug log
+  const userData = req.body; // Get data from the request body
+  const newUser = new User(userData); // Create a new User instance
+
+  newUser.save()
+    .then(user => {
+      console.log('User created:', user); // Debug log
+      res.status(201).json(user); // Send back the created user as a response
+    })
+    .catch(err => {
+      console.log('Error creating user:', err);
+      res.status(400).json({ error: err.message });
     });
 };
