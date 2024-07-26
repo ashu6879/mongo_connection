@@ -12,6 +12,7 @@ app.use(express.json());
 
 // Route handling
 app.use('/', userRoutes);
+app.use('/users', userRoutes);
 
 // Define the port
 const PORT = process.env.PORT || 80; // Use environment variable if available
